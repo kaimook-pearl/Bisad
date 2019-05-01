@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/submoney.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/submoney.css" />
     <title>แจ้งชำระเงิน</title>
     <style>html,body{overflow-x: hidden;}</style>
     <style>html,body{overflow-y: hidden;}</style>
@@ -12,7 +12,7 @@
 <body>
 <div class="menu">
     <div class="index" onclick="location.href='?page=home';">
-        <img src="../image/logo1.jpg" style="width: 4em; height: 1.5em;"></a> 
+        <img src="image/logo1.jpg" style="width: 4em; height: 1.5em;"></a> 
     </div>
 
     <div class="navbar">
