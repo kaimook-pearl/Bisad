@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="css/money.css" />
     <title>การชำระเงิน</title>
-    <style>html,body{overflow-x: hidden;}</style>
-    <style>html,body{overflow-y: hidden;}</style>
 </head>
 <body>
 <div class="menu">
@@ -29,7 +27,7 @@
 
 
 <div class="logo1" onclick="location.href='?page=submoney';">
-    <img src="image/logo.png" style="width:40%">
+    <img src="image/logo.png" style="width:50%">
 </div>
     
 </body>
