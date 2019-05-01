@@ -12,7 +12,7 @@
 <body>
 <div class="menu">
     <div class="index" onclick="location.href='?page=home';">
-        <img src="../image/logo1.jpg" style="width: 4em; height: 1.5em;"></a> 
+        <img src="image/logo1.jpg" style="width: 4em; height: 1.5em;"></a> 
     </div>
 
     <div class="navbar">
