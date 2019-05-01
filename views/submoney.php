@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/fix.css" />
-    <title>แจ้งซ่อม</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/money.css" />
+    <title>การชำระเงิน</title>
     <style>html,body{overflow-x: hidden;}</style>
     <style>html,body{overflow-y: hidden;}</style>
 </head>
@@ -27,17 +27,9 @@
 
 </div>
 
-<div class="info">
-    <div>
-        <div class="textinfo">
-            
-            <div class="logo1" onclick="location.href='?page=submoney';">
-                <img src="image/logo.png" style="width:40%">
-            </div>
-        </div>
-        
-    </div>
-</div>
+
+
+
 
     
 </body>

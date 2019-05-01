@@ -29,6 +29,10 @@
             require_once('views/logout.php');
             break;
           
+          case 'submoney':
+            require_once('views/submoney.php')
+              break;
+          
           case 'ค่าจาก ?page=':
             # code...
             break;

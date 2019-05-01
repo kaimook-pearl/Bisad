@@ -28,7 +28,9 @@
 </div>
 
 
-
+<div class="logo1" onclick="location.href='?page=submoney';">
+    <img src="image/logo.png" style="width:40%">
+</div>
     
 </body>
 </html>
