@@ -1,0 +1,76 @@
+@font-face {
+    font-family: Cloud-Light;
+    src: url(Cloud-Light.otf);
+}
+
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;    
+}
+
+.logo{
+
+}
+
+
+.left{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 45%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: -300px;
+}
+
+
+
+.right{
+    float: right;
+    width: 51%;
+    text-align: center;
+       
+}
+
+
+input{
+    width: 40%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    margin: 12px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+input:focus{
+    outline:none;
+}
+
+.username{
+    text-align: center;
+}
+
+.password{
+    text-align: center;
+
+}
+
+.font{
+    margin-left: 275px;
+}
+
+.login{
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.login input{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(247, 255, 252);
+}

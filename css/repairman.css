@@ -1,0 +1,87 @@
+body{
+    background-image: url(/image/111.jpg);
+    height: 100%;
+    margin: 0;
+    padding: 0;  
+}
+
+.menu{
+    background-color: #f8f8f8;
+    width: 100%;
+    text-align: center;
+    border-radius: 0.5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.menu img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 0.5%;
+}
+
+
+.index{
+    width: 7%;
+    text-align: left;
+    margin-left: 2.5%;
+    cursor: pointer;
+    margin-top: 0.75%;
+}
+
+.out{
+    margin-left: 1000px;
+}
+
+.out a{
+    float: right;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+.out a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.info{
+    background-color: #f8f8f8;
+    width: 90%;
+    margin-top: 8%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.textinfo{
+    text-align: left;
+    margin-left: 5%;
+    font-size: 20px;
+    padding: 3%;
+}
