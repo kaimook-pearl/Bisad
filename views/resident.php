@@ -30,14 +30,14 @@
     <div>
         <div class="textinfo">
             <?php
-                    $conn = mysqli_connect("localhost", "root", "", "lucky") or die("ERROR");
+                    $conn = mysqli_connect("localhost", "root", "", "test") or die("ERROR");
                     mysqli_set_charset($conn, "utf8");
 
                     $query = mysqli_query($conn,"SELECT * FROM user JOIN resident on(user.username = resident.room_id) WHERE user.id = ".$_SESSION['id']);
                     if ($query->num_rows > 0) {
                         // output data of each row
                         while($row = $query->fetch_assoc()) {
-                            echo "ตึก: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;". $row["Unit"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" ."Room: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;". $row["room"]. "<br>";
+                            echo "ตึก: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;". $row["building"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" ."Room: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;". $row["room"]. "<br>";
                             echo "Name: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["name"]. "<br>". " E-mail: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["email"]. "<br>".
                             " Phone: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["phone"]. "<br>".  " Room-detail: "."&nbsp;&nbsp;&nbsp;&nbsp;" . $row["roomdetail"]. "<br>". " Furniture: "."&nbsp;&nbsp;&nbsp;&nbsp;" . $row["furniture"]. "<br>";
                             echo "Price: "."&nbsp;&nbsp;&nbsp;&nbsp;" . $row["price"]. "<br>". " water-unit: "."&nbsp;&nbsp;&nbsp;&nbsp;" . $row["waterunit"]. "<br>". "Elect-unit: "."&nbsp;&nbsp;&nbsp;&nbsp;" . $row["electunit"]. "<br>";

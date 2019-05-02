@@ -12,7 +12,7 @@
 <body>
     <div class="menu">
         <div class="index" onclick="location.href='?page=home';">
-            <img src="../image/logo1.jpg" style="width: 4em; height: 1.5em;"></a> 
+            <img src="image/logo1.jpg" style="width: 4em; height: 1.5em;"></a> 
         </div>
 
         <div class="navbar">
@@ -29,14 +29,14 @@
         <div>
             <div class="textinfo">
                 <?php
-                        $conn = mysqli_connect("localhost", "root", "", "lucky") or die("ERROR");
+                        $conn = mysqli_connect("localhost", "root", "", "test") or die("ERROR");
                         mysqli_set_charset($conn, "utf8");
 
                         $query = mysqli_query($conn,"SELECT * FROM user JOIN repairman on(user.username = repairman.id) WHERE user.id = ".$_SESSION['id']);
                         if ($query->num_rows > 0) {
                             // output data of each row
                             while($row = $query->fetch_assoc()) {
-                                echo "Name: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["repairname"]. "<br>". " Phone: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["phone"]. "<br>".
+                                echo "Name: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["name"]. "<br>". " Phone: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["phone"]. "<br>".
                                 " type: "."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $row["type"]. "<br>";
                             }
                         } else {
