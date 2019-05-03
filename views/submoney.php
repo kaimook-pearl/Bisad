@@ -32,6 +32,12 @@
         <div class="blogx">
             <h3>ส่งหลักฐาน</h3>
         </div>
+        <form>
+            First name:<br>
+            <input type="text" name="จากธนาคาร"><br>
+            Last name:<br>
+            <input type="text" name="ไปยังธนาคาร">
+        </form>
     </div>
 </div>
 
