@@ -31,8 +31,7 @@
     <div>
         <div class="blogx">
             <h3>ส่งหลักฐาน</h3>
-        </div>
-        <form>
+            <form>
             <div class="col-25">
                 <label for="fname">จากธนาคาร:</label>
             </div>
@@ -45,7 +44,8 @@
             <div class="col-75">
                 <input type="text" id="tbank" name="tbank">
             </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 
