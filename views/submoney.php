@@ -33,10 +33,18 @@
             <h3>ส่งหลักฐาน</h3>
         </div>
         <form>
-            First name:<br>
-            <input type="text" name="จากธนาคาร"><br>
-            Last name:<br>
-            <input type="text" name="ไปยังธนาคาร">
+            <div class="col-25">
+                <label for="fname">จากธนาคาร:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="sbank" name="sbank">
+            </div>
+            <div class="col-25">
+                <label for="lname">ไปยังธนาคาร:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="tbank" name="tbank">
+            </div>
         </form>
     </div>
 </div>
