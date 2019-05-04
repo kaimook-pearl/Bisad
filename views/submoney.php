@@ -32,18 +32,26 @@
         <div class="blogx">
             <h3>ส่งหลักฐาน</h3>
             <form>
-            <div class="col-25">
-                <label for="fname">จากธนาคาร:</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="sbank" name="sbank">
-            </div>
-            <div class="col-25">
-                <label for="lname">ไปยังธนาคาร:</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="tbank" name="tbank">
-            </div>
+            <p>
+                <label for="fname">จากธนาคาร</label>
+                <input type="text" id="fname" name="fname">
+            </p>
+            <p>
+                <label for="lname">ไปยังธนาคาร</label>
+                <input type="text" id="lname" name="lname">
+            </p>
+            <p>
+                <label for="fname">ยอดที่ต้องชำระ</label>
+                <input type="text" id="fname" name="fname">
+            </p>
+            <p>
+                <label for="fname">วันที่โอนชำระเงิน</label>
+                <input type="text" id="fname" name="fname"placeholder="xx/xx/xxxx">
+            </p>
+            <p>
+                <label for="fname">เวลาที่โอนชำระเงิน</label>
+                <input type="text" id="fname" name="fname"placeholder="xx:xx">
+            </p>
             </form>
         </div>
     </div>
