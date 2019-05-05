@@ -48,7 +48,7 @@ INSERT INTO `administrator` (`id`, `actnum`, `bank`) VALUES
 --
 
 CREATE TABLE `bill` (
-  `id` char(4) CHARACTER SET utf8 NOT NULL,
+  `id` char(5) CHARACTER SET utf8 NOT NULL,
   `room` char(5) CHARACTER SET utf8 DEFAULT NULL,
   `cost` int(4) DEFAULT NULL,
   `state` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
@@ -79,7 +79,7 @@ INSERT INTO `bill` (`id`, `room`, `cost`, `state`, `day`) VALUES
 --
 
 CREATE TABLE `payment` (
-  `bill_id` char(4) CHARACTER SET utf8 NOT NULL,
+  `bill_id` char(5) CHARACTER SET utf8 NOT NULL,
   `room` char(5) CHARACTER SET utf8 DEFAULT NULL,
   `frombank` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
   `tobank` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
