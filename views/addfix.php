@@ -21,7 +21,7 @@
     }
 
     mysqli_query($conn, "INSERT INTO `repairdetails` values ('$order','$work','$problem','$tel','$requir','$room')") or die(mysqli_error($conn));
-    mysqli_query($conn, "INSERT INTO `repair` values ('$order','$problem','รอดำเนินการ')") or die(mysqli_error($conn));
+    mysqli_query($conn, "INSERT INTO `repair` values ('$order','','รอดำเนินการ')") or die(mysqli_error($conn));
     echo "<script>
          alert('Success');
          window.location = '?page=fix';
