@@ -51,24 +51,26 @@ CREATE TABLE `bill` (
   `id` char(4) CHARACTER SET utf8 NOT NULL,
   `room` char(5) CHARACTER SET utf8 DEFAULT NULL,
   `cost` int(4) DEFAULT NULL,
-  `status` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
-  `date` date DEFAULT NULL
+  `state` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `day` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bill`
 --
 
-INSERT INTO `bill` (`id`, `room`, `cost`, `status`, `date`) VALUES
-('b001', 'A1101', 5500, 'ชำระแล้ว-รอตรวจสอบ', '2019-05-25'),
-('b002', 'A1102', 5500, 'ชำระแล้ว-รอตรวจสอบ', '2019-05-25'),
-('b003', 'A1201', 6000, 'แจ้งชำระ', '2019-05-25'),
-('b004', 'A1202', 6000, 'แจ้งชำระ', '2019-05-25'),
-('b005', 'A2101', 5500, 'แจ้งชำระ', '2019-05-25'),
-('b006', 'A2102', 6000, 'ชำระแล้ว-รอตรวจสอบ', '2019-05-25'),
-('b007', 'A2103', 6000, 'แจ้งชำระ', '2019-05-25'),
-('b008', 'A2201', 5500, 'แจ้งชำระ', '2019-05-25'),
-('b009', 'A2202', 5500, 'ชำระแล้ว-รอตรวจสอบ', '2019-05-25');
+INSERT INTO `bill` (`id`, `room`, `cost`, `state`, `day`) VALUES
+('b001', 'A1101', 5500, 'ชำระแล้ว', '2019-03-25'),
+('b002', 'A1101', 5500, 'ชำระแล้ว', '2019-04-25'),
+('b003', 'A1101', 5500, 'ชำระแล้ว', '2019-05-25'),
+('b004', 'A1102', 5500, 'ชำระแล้ว-รอตรวจสอบ', '2019-05-25'),
+('b005', 'A1201', 6000, 'แจ้งชำระ', '2019-05-25'),
+('b006', 'A1202', 6000, 'แจ้งชำระ', '2019-05-25'),
+('b007', 'A2101', 5500, 'แจ้งชำระ', '2019-05-25'),
+('b008', 'A2102', 6000, 'ชำระแล้ว-รอตรวจสอบ', '2019-05-25'),
+('b009', 'A2103', 6000, 'แจ้งชำระ', '2019-05-25'),
+('b010', 'A2201', 5500, 'แจ้งชำระ', '2019-05-25'),
+('b011', 'A2202', 5500, 'ชำระแล้ว-รอตรวจสอบ', '2019-05-25');
 
 -- --------------------------------------------------------
 
@@ -81,8 +83,8 @@ CREATE TABLE `payment` (
   `room` char(5) CHARACTER SET utf8 DEFAULT NULL,
   `frombank` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
   `tobank` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `time` float(2,2) DEFAULT NULL,
+  `day` date DEFAULT NULL,
+  `when` float(2,2) DEFAULT NULL,
   `cost` int(4) DEFAULT NULL,
   `pictureurl` varchar(100) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -91,11 +93,13 @@ CREATE TABLE `payment` (
 -- Dumping data for table `payment`
 --
 
-INSERT INTO `payment` (`bill_id`, `room`, `frombank`, `tobank`, `date`, `time`, `cost`, `pictureurl`) VALUES
-('b001', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-05-30', 0.99, 5500, NULL),
-('b002', 'A1102', 'ไทยพาณิชย์', 'กสิกรไทย', '2019-06-01', 0.99, 5500, NULL),
-('b006', 'A2102', 'ทหารไทย', 'กสิกรไทย', '2019-05-26', 0.99, 6000, NULL),
-('b009', 'A2202', 'กสิกรไทย', 'กสิกรไทย', '2019-05-26', 0.99, 5500, NULL);
+INSERT INTO `payment` (`bill_id`, `room`, `frombank`, `tobank`, `day`, `when`, `cost`, `pictureurl`) VALUES
+('b001', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-03-27', 15.12, 5500, NULL),
+('b002', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-04-29', 14.07, 5500, NULL),
+('b003', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-05-30', 13.55, 5500, NULL),
+('b004', 'A1102', 'ไทยพาณิชย์', 'กสิกรไทย', '2019-06-01', 12.00, 5500, NULL),
+('b008', 'A2102', 'ทหารไทย', 'กสิกรไทย', '2019-05-26', 16.00, 6000, NULL),
+('b011', 'A2202', 'กสิกรไทย', 'กสิกรไทย', '2019-05-26', 20.00, 5500, NULL);
 
 -- --------------------------------------------------------
 
@@ -105,27 +109,26 @@ INSERT INTO `payment` (`bill_id`, `room`, `frombank`, `tobank`, `date`, `time`, 
 
 CREATE TABLE `repair` (
   `repair_id` char(6) CHARACTER SET utf8 NOT NULL,
-  `title` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `comments` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `status` varchar(20) CHARACTER SET utf8 DEFAULT NULL
+  `comments` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  `state` varchar(20) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `repair`
 --
 
-INSERT INTO `repair` (`repair_id`, `title`, `comments`, `status`) VALUES
-('RE0001', 'ฟ็อกกี้เสีย', NULL, 'รอดำเนินการ'),
-('RE0002', 'ประตูห้องน้ำปิดไม่ได้', NULL, 'สำเร็จ'),
-('RE0003', 'ไฟหน้าห้องน้ำเปิดไม่ติด', NULL, 'รอดำเนินการ'),
-('RE0004', 'น้ำแอร์หยด', NULL, 'รอดำเนินการ'),
-('RE0005', 'ประตูบานเลื่อนล็อกไม่ได้', NULL, 'สำเร็จ'),
-('RE0006', 'ก๊อกน้ำไม่ไหล', NULL, 'สำเร็จ'),
-('RE0007', 'มุ้งลวดขาด', NULL, 'สำเร็จ'),
-('RE0008', 'ทีวีเสีย', NULL, 'สำเร็จ'),
-('RE0009', 'ฝ้าน้ำซึม', NULL, 'รอดำเนินการ'),
-('RE0010', 'ช่องเสียบสายแลนใช้ไม่ได้', NULL, 'รอดำเนินการ'),
-('RE0011', 'ฟ็อกกี้เสีย', NULL, 'รอดำเนินการ');
+INSERT INTO `repair` (`repair_id`, , `comments`, `state`) VALUES
+('RE0001', NULL, 'รอดำเนินการ'),
+('RE0002', NULL, 'สำเร็จ'),
+('RE0003', NULL, 'รอดำเนินการ'),
+('RE0004', NULL, 'รอดำเนินการ'),
+('RE0005', NULL, 'สำเร็จ'),
+('RE0006', NULL, 'สำเร็จ'),
+('RE0007', NULL, 'สำเร็จ'),
+('RE0008', NULL, 'สำเร็จ'),
+('RE0009', NULL, 'รอดำเนินการ'),
+('RE0010', NULL, 'รอดำเนินการ'),
+('RE0011', NULL, 'รอดำเนินการ');
 
 -- --------------------------------------------------------
 
@@ -135,12 +138,10 @@ INSERT INTO `repair` (`repair_id`, `title`, `comments`, `status`) VALUES
 
 CREATE TABLE `repairdetails` (
   `repair_id` char(6) CHARACTER SET utf8 NOT NULL,
-  `type` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
   `subtype` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `description` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `phone` char(12) CHARACTER SET utf8 DEFAULT NULL,
   `allowstatus` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
-  `date` date DEFAULT NULL,
   `room` char(5) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -148,18 +149,18 @@ CREATE TABLE `repairdetails` (
 -- Dumping data for table `repairdetails`
 --
 
-INSERT INTO `repairdetails` (`repair_id`, `type`, `subtype`, `description`, `phone`, `allowstatus`, `date`, `room`) VALUES
-('RE0001', 'อุปกรณ์ประปา', 'สายชำระ', 'ฟ็อกกี้เสีย', '081-641-3340', 'อนุญาต', '2019-05-01', 'A1102'),
-('RE0002', 'อุปกรณ์ครุภัณฑ์', 'ประตูห้องน้ำ', 'ประตูห้องน้ำปิดไม่ได้', '087-991-7940', 'อนุญาต', '2019-05-02', 'A1201'),
-('RE0003', 'อุปกรณ์ไฟฟ้า', 'สวิทช์เปิด-ปิดไฟห้องน้ำ', 'ไฟห้องน้ำเปิดไม่ติด', '089-991-7941', 'ไม่อนุญาต', '2019-05-13', 'A1202'),
-('RE0004', 'อื่นๆ', 'หมวดงานซ่อมย่อยอื่นๆ', 'น้ำแอร์หยด', '083-991-7942', 'ไม่อนุญาต', '2019-05-14', 'A2101'),
-('RE0005', 'อื่นๆ', 'หมวดงานซ่อมย่อยอื่นๆ', 'ประตูบานเลื่อนล็อกไม่ได้', '084-987-5641', 'อนุญาต', '2019-05-15', 'A2102'),
-('RE0006', 'อุปกรณ์ประปา', 'ก๊อกน้ำ', 'ก๊อกน้ำไม่ไหล', '098-654-985', 'ไม่อนุญาต', '2019-05-16', 'A2103'),
-('RE0007', 'อุปกรณ์ครุภัณฑ์', 'มุ้งลวด', 'มุ้งลวดขาด', '096-636-8746', 'อนุญาต', '2019-05-26', 'A2201'),
-('RE0008', 'อุปกรณ์ไฟฟ้า', 'ทีวี', 'ทีวีเสีย', '099-548-9856', 'อนุญาต', '2019-05-27', 'A2202'),
-('RE0009', 'อุปกรณ์ครุภัณฑ์', 'ฝ้าเพดาน', 'ฝ้าน้ำซึม', '085-574-6524', 'อนุญาต', '2019-05-29', 'A1101'),
-('RE0010', 'อื่นๆ', 'หมวดงานซ่อมย่อยอื่นๆ', 'ช่องเสียบสายแลนใช้ไม่ได้', '087-985-9685', 'อนุญาต', '2019-05-29', 'A1101'),
-('RE0011', 'อุปกรณ์ประปา', 'สายชำระ', 'ฟ็อกกี้เสีย', '091-698-5459', 'ไม่อนุญาต', '2019-06-01', 'A1101');
+INSERT INTO `repairdetails` (`repair_id`, `subtype`, `description`, `phone`, `allowstatus`, `room`) VALUES
+('RE0001', 'สายชำระ', 'ฟ็อกกี้เสีย', '081-641-3340', 'อนุญาต', 'A1102'),
+('RE0002', 'ประตูห้องน้ำ', 'ประตูห้องน้ำปิดไม่ได้', '087-991-7940', 'อนุญาต', 'A1201'),
+('RE0003', 'สวิทช์เปิด-ปิดไฟห้องน้ำ', 'ไฟห้องน้ำเปิดไม่ติด', '089-991-7941', 'ไม่อนุญาต', 'A1202'),
+('RE0004', 'อื่นๆ', 'น้ำแอร์หยด', '083-991-7942', 'ไม่อนุญาต', 'A2101'),
+('RE0005', 'อื่นๆ', 'ประตูบานเลื่อนล็อกไม่ได้', '084-987-5641', 'อนุญาต', 'A2102'),
+('RE0006', 'ก๊อกน้ำ', 'ก๊อกน้ำไม่ไหล', '098-654-985', 'ไม่อนุญาต', 'A2103'),
+('RE0007', 'มุ้งลวด', 'มุ้งลวดขาด', '096-636-8746', 'อนุญาต', 'A2201'),
+('RE0008', 'ทีวี', 'ทีวีเสีย', '099-548-9856', 'อนุญาต', 'A2202'),
+('RE0009', 'ฝ้าเพดาน', 'ฝ้าน้ำซึม', '085-574-6524', 'อนุญาต', 'A1101'),
+('RE0010', 'อื่นๆ', 'ช่องเสียบสายแลนใช้ไม่ได้', '087-985-9685', 'อนุญาต', 'A1101'),
+('RE0011', 'สายชำระ', 'ฟ็อกกี้เสีย', '091-698-5459', 'ไม่อนุญาต', 'A1101');
 
 -- --------------------------------------------------------
 

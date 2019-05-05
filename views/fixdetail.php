@@ -53,60 +53,60 @@
                 <select name="drpGid" id="drpGid" onchange="onTypeChange(this);">
                     <option value="0" selected="selected">เลือกงานซ่อม</option>
                     <optgroup label="อุปกรณ์ไฟฟ้า">
-                        <option value="13">ตู้เย็น</option>
-                        <option value="44">ทีวี</option>
-                        <option value="7">ปลั๊กไฟเต้ารับ</option>
-                        <option value="45">พัดลม</option>
-                        <option value="6">สวิทซ์เปิด-ปิดไฟระเบียง</option>
-                        <option value="4">สวิทซ์เปิด-ปิดไฟห้องนอน</option>
-                        <option value="5">สวิทซ์เปิด-ปิดไฟห้องน้ำ</option>
-                        <option value="8">สายไฟฟ้า</option>
-                        <option value="3">หลอดไฟระเบียง</option>
-                        <option value="1">หลอดไฟห้องนอน</option>
-                        <option value="2">หลอดไฟห้องน้ำ</option>
-                        <option value="12">เครื่องทำความเย็นแอร์</option>
-                        <option value="11">เครื่องทำน้ำอุ่น</option>
-                        <option value="9">เบรคเกอร์-สะพานไฟ</option>
-                        <option value="10">ไฟฉุกเฉิน</option>
-                        <option value="14">ไมโครเวป</option>
+                        <option value="ตู้เย็น">ตู้เย็น</option>
+                        <option value="ทีวี">ทีวี</option>
+                        <option value="ปลั๊กไฟเต้ารับ">ปลั๊กไฟเต้ารับ</option>
+                        <option value="พัดลม">พัดลม</option>
+                        <option value="สวิทซ์เปิด-ปิดไฟระเบียง">สวิทซ์เปิด-ปิดไฟระเบียง</option>
+                        <option value="สวิทซ์เปิด-ปิดไฟห้องนอน">สวิทซ์เปิด-ปิดไฟห้องนอน</option>
+                        <option value="สวิทซ์เปิด-ปิดไฟห้องน้ำ">สวิทซ์เปิด-ปิดไฟห้องน้ำ</option>
+                        <option value="สายไฟฟ้า">สายไฟฟ้า</option>
+                        <option value="หลอดไฟระเบียง">หลอดไฟระเบียง</option>
+                        <option value="หลอดไฟห้องนอน">หลอดไฟห้องนอน</option>
+                        <option value="หลอดไฟห้องน้ำ">หลอดไฟห้องน้ำ</option>
+                        <option value="เครื่องทำความเย็นแอร์">เครื่องทำความเย็นแอร์</option>
+                        <option value="เครื่องทำน้ำอุ่น">เครื่องทำน้ำอุ่น</option>
+                        <option value="เบรคเกอร์-สะพานไฟ">เบรคเกอร์-สะพานไฟ</option>
+                        <option value="ไฟฉุกเฉิน">ไฟฉุกเฉิน</option>
+                        <option value="ไมโครเวป">ไมโครเวป</option>
                     </optgroup>
                     <optgroup label="อุปกรณ์ประปา">
-                        <option value="25">ก๊อกน้ำ</option>
-                        <option value="16">ก๊อกน้ำอ่างซักผ้า</option>
-                        <option value="15">ก๊อกน้ำอ่างล้างหน้า</option>
-                        <option value="21">ท่อน้ำ</option>
-                        <option value="47">ปั๊มน้ำ</option>
-                        <option value="17">ผักบัวห้องอาบน้ำ</option>
-                        <option value="27">ฝาปิดชักโครก</option>
-                        <option value="26">ลูกลอยโถชักโครก</option>
-                        <option value="28">วาล์วน้ำฝักบัว</option>
-                        <option value="19">สายชำระ</option>
-                        <option value="18">สายฝักบัวห้องอาบน้ำ</option>
-                        <option value="20">หัวฉีดฟ๊อกกี้</option>
-                        <option value="22">อ่างล้างหน้า</option>
-                        <option value="23">โถปัสสาวะ</option>
-                        <option value="24">โถส้วม</option>
+                        <option value="ก๊อกน้ำ">ก๊อกน้ำ</option>
+                        <option value="ก๊อกน้ำอ่างซักผ้า">ก๊อกน้ำอ่างซักผ้า</option>
+                        <option value="ก๊อกน้ำอ่างล้างหน้า">ก๊อกน้ำอ่างล้างหน้า</option>
+                        <option value="ท่อน้ำ">ท่อน้ำ</option>
+                        <option value="ปั๊มน้ำ">ปั๊มน้ำ</option>
+                        <option value="ผักบัวห้องอาบน้ำ">ผักบัวห้องอาบน้ำ</option>
+                        <option value="ฝาปิดชักโครก">ฝาปิดชักโครก</option>
+                        <option value="ลูกลอยโถชักโครก">ลูกลอยโถชักโครก</option>
+                        <option value="วาล์วน้ำฝักบัว">วาล์วน้ำฝักบัว</option>
+                        <option value="สายชำระ">สายชำระ</option>
+                        <option value="สายฝักบัวห้องอาบน้ำ">สายฝักบัวห้องอาบน้ำ</option>
+                        <option value="หัวฉีดฟ๊อกกี้">หัวฉีดฟ๊อกกี้</option>
+                        <option value="อ่างล้างหน้า">อ่างล้างหน้า</option>
+                        <option value="โถปัสสาวะ">โถปัสสาวะ</option>
+                        <option value="โถส้วม">โถส้วม</option>
                     </optgroup>
                     <optgroup label="อุปกรณ์ครุภัณฑ์">
-                        <option value="29">กระจกห้องน้ำ</option>
-                        <option value="36">กลอนประตูห้อง</option>
-                        <option value="33">ตู้เสื้อผ้า</option>
-                        <option value="37">ที่ล็อคกุญแจห้อง</option>
-                        <option value="35">บานพักประตูเสื้อผ้า</option>
-                        <option value="34">บานพับประตูห้อง</option>
-                        <option value="40">บานเกล็ด</option>
-                        <option value="42">ประตูห้อง</option>
-                        <option value="43">ประตู้ห้องน้ำ</option>
-                        <option value="41">ฝ้าเพดาน</option>
-                        <option value="39">พื้นกระเบื้อง</option>
-                        <option value="48">มุ้งลวด</option>
-                        <option value="30">ลูกบิดห้อง</option>
-                        <option value="31">ลูกบิดห้องน้ำ</option>
-                        <option value="38">เตียงนอน</option>
-                        <option value="32">โต๊ะแต่งตัว</option>
+                        <option value="กระจกห้องน้ำ">กระจกห้องน้ำ</option>
+                        <option value="กลอนประตูห้อง">กลอนประตูห้อง</option>
+                        <option value="ตู้เสื้อผ้า">ตู้เสื้อผ้า</option>
+                        <option value="ที่ล็อคกุญแจห้อง">ที่ล็อคกุญแจห้อง</option>
+                        <option value="บานพักประตูเสื้อผ้า">บานพักประตูเสื้อผ้า</option>
+                        <option value="บานพับประตูห้อง">บานพับประตูห้อง</option>
+                        <option value="บานเกล็ด">บานเกล็ด</option>
+                        <option value="ประตูห้อง">ประตูห้อง</option>
+                        <option value="ประตู้ห้องน้ำ">ประตู้ห้องน้ำ</option>
+                        <option value="ฝ้าเพดาน">ฝ้าเพดาน</option>
+                        <option value="พื้นกระเบื้อง">พื้นกระเบื้อง</option>
+                        <option value="มุ้งลวด">มุ้งลวด</option>
+                        <option value="ลูกบิดห้อง">ลูกบิดห้อง</option>
+                        <option value="ลูกบิดห้องน้ำ">ลูกบิดห้องน้ำ</option>
+                        <option value="เตียงนอน">เตียงนอน</option>
+                        <option value="โต๊ะแต่งตัว">โต๊ะแต่งตัว</option>
                     </optgroup>
-                    <optgroup label="อื่น ๆ">
-                        <option value="50">อื่น ๆ</option>
+                    <optgroup label="อื่นๆ">
+                        <option value="อื่นๆ">อื่นๆ</option>
                     </optgroup>
                 </select><br><br>
 
@@ -118,9 +118,9 @@
 
                 <label for="lblentry">กรณีผู้เช่าไม่อยู่ห้อง อนุญาตให้ช่างเข้าซ่อมหรือไม่?</label><br><br>
                 <p>
-                    <input name="rdoisentry" type="radio" value="1">
+                    <input name="rdoisentry" type="radio" value="อนุญาต">
                     อนุญาต
-                    <input name="rdoisentry" type="radio" value="0" checked="">ไม่อนุญาต
+                    <input name="rdoisentry" type="radio" value="ไม่อนุญาต" checked="">ไม่อนุญาต
 
                     <br>
                     <br>
@@ -136,8 +136,8 @@
 </html>
 
 <?php
-    if (isset($_POST['txtbuildid'])) {
-        $room = $_POST['room'];
-        mysqli_query($conn, "INSERT INTO repairdetails (room) value ('$room')") or die(mysqli_error($conn));
-    }
+    // if (isset($_POST['txtbuildid'])) {
+    //     $room = $_POST['room'];
+    //     mysqli_query($conn, "INSERT INTO repairdetails (room) value ('$room')") or die(mysqli_error($conn));
+    // }
 ?>

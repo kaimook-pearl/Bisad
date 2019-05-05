@@ -60,12 +60,12 @@
         $conn = mysqli_connect("localhost", "root", "", "test") or die("ERROR");
         mysqli_set_charset($conn, "utf8");
                     
-        $query = mysqli_query($conn,"SELECT r.description, rp.status, rp.repair_id
+        $query = mysqli_query($conn,"SELECT rd.description, rp.state, rp.repair_id
         FROM user u
-        JOIN repairdetails r
-        ON (u.username = r.room)
+        JOIN repairdetails rd
+        ON (u.username = rd.room)
         JOIN repair rp
-        ON (r.repair_id = rp.repair_id)
+        ON (rd.repair_id = rp.repair_id)
         WHERE u.id = ".$_SESSION['id']);
           if ($query->num_rows > 0) {
           ?><table style="width:100%" border="1">
@@ -88,7 +88,7 @@
                 <td>". $row["description"];?>
                 </td>
                 <td><?php
-                echo  $row["status"]."<br>";
+                echo  $row["state"]."<br>";
                 }
                     } else {
                         echo "0 results";
