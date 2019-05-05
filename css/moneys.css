@@ -1,0 +1,139 @@
+body{
+    background-image: url(/image/111.jpg);
+    height: 100%;
+    margin: 0;
+    padding: 0;  
+}
+
+.menu{
+    background-color: #f8f8f8;
+    width: 100%;
+    text-align: center;
+    border-radius: 0.5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.menu img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 0.5%;
+}
+
+
+.index{
+    width: 7%;
+    text-align: left;
+    margin-left: 2.5%;
+    cursor: pointer;
+    margin-top: 0.75%;
+}
+
+.out{
+    margin-left: 725px;
+}
+
+.out a{
+    float: right;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+.out a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.blog{
+    background-color: #f8f8f8;
+    width: 90%;
+    margin-top: 8%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blogx{
+    text-align: left;
+    margin-left: 5%;
+    font-size: 20px;
+    padding: 3%;
+}
+
+table {
+    border: 1px solid #dddddd;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+td, th {
+    /* border: 1px solid #dddddd; */
+    text-align: center;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+.test{
+      margin-top: 100px;
+  }
+
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: rgb(133, 120, 120);
+opacity: 1;}
+
+  .button1 {
+    background-color: rgba(136, 134, 134, 0.986);
+    border: none;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 300px;
+  }
+  .button1:hover {background-color: White;}
