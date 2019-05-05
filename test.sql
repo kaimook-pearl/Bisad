@@ -84,7 +84,7 @@ CREATE TABLE `payment` (
   `frombank` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
   `tobank` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
   `day` date DEFAULT NULL,
-  `when` float(2,2) DEFAULT NULL,
+  `when` varchar(5) DEFAULT NULL,
   `cost` int(4) DEFAULT NULL,
   `pictureurl` varchar(100) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -94,12 +94,12 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`bill_id`, `room`, `frombank`, `tobank`, `day`, `when`, `cost`, `pictureurl`) VALUES
-('b001', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-03-27', 15.12, 5500, NULL),
-('b002', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-04-29', 14.07, 5500, NULL),
-('b003', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-05-30', 13.55, 5500, NULL),
-('b004', 'A1102', 'ไทยพาณิชย์', 'กสิกรไทย', '2019-06-01', 12.00, 5500, NULL),
-('b008', 'A2102', 'ทหารไทย', 'กสิกรไทย', '2019-05-26', 16.00, 6000, NULL),
-('b011', 'A2202', 'กสิกรไทย', 'กสิกรไทย', '2019-05-26', 20.00, 5500, NULL);
+('b001', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-03-27', '15:12', 5500, NULL),
+('b002', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-04-29', '14:07', 5500, NULL),
+('b003', 'A1101', 'กสิกรไทย', 'กสิกรไทย', '2019-05-30', '13:55', 5500, NULL),
+('b004', 'A1102', 'ไทยพาณิชย์', 'กสิกรไทย', '2019-06-01', '12:00', 5500, NULL),
+('b008', 'A2102', 'ทหารไทย', 'กสิกรไทย', '2019-05-26', '16:00', 6000, NULL),
+('b011', 'A2202', 'กสิกรไทย', 'กสิกรไทย', '2019-05-26', '20:00', 5500, NULL);
 
 -- --------------------------------------------------------
 
