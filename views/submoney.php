@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="css/submoney.css" />
     <title>แจ้งชำระเงิน</title>
-    <style>html,body{overflow-x: hidden;}</style>
-    <style>html,body{overflow-y: hidden;}</style>
 </head>
 <body>
 <div class="menu">
@@ -28,33 +26,49 @@
 </div>
 
 <div class="blog">
-    <div>
         <div class="blogx">
             <h3>ส่งหลักฐาน</h3>
-            <form>
-            <p>
-                <label for="fname">จากธนาคาร</label>
-                <input type="text" id="fname" name="fname">
-            </p>
-            <p>
-                <label for="lname">ไปยังธนาคาร</label>
-                <input type="text" id="lname" name="lname">
-            </p>
-            <p>
-                <label for="fname">ยอดที่ต้องชำระ</label>
-                <input type="text" id="fname" name="fname">
-            </p>
-            <p>
-                <label for="fname">วันที่โอนชำระเงิน</label>
-                <input type="text" id="fname" name="fname"placeholder="xx/xx/xxxx">
-            </p>
-            <p>
-                <label for="fname">เวลาที่โอนชำระเงิน</label>
-                <input type="text" id="fname" name="fname"placeholder="xx:xx">
-            </p>
-            </form>
+            <div class="row">
+                
+                <div class = "col-5">
+                    <h5>จากธนาคาร:</h5>
+                    <input type="text" id="bank" name="bank">  
+                </div>
+                <div class = "col-5">
+                    <h5>ใบเสร้จสลิปการโอน:</h5>
+                    <input type="text" id="pic" name="pic"> 
+                    <input type="file" name="myFile">               
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class = "col-5">
+                    <h5>ไปยังธนาคาร:</h5>
+                    <input type="text" id="tobank" name="tobank">  
+                </div>
+                <div class = "col-5">
+                    <h5>ยอดที่ต้องชำระ:</h5>
+                    <input type="text" id="total" name="total">                
+                </div>
+            <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class = "col-5">
+                    <h5>วันที่โอนชำระเงิน:</h5>
+                    <input type="date" id="day" name="day">  
+                </div>
+                <div class="col-5">
+                    <h5>เวลาที่โอนชำระเงิน:</h5>
+                    <input type="time" id="time" name="time">  
+                </div>
+                <div class = "col-5">
+                    <button type="button" id="save" name="save">Save</button>               
+                </div>
+                
+            </div>  
         </div>
-    </div>
 </div>
 
 
