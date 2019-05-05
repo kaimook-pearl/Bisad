@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php 
+if(isset($_SESSION['id'])){
+    header("?page=login");
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

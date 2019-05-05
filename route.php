@@ -32,7 +32,13 @@
           case 'submoney':
             require_once('views/submoney.php');
             break;
-          
+          case 'fixdetail':
+            require_once('views/fixdetail.php');
+            break;
+          case 'addfix':
+            require_once('views/addfix.php');
+          break;
+
           case 'ค่าจาก ?page=':
             # code...
             break;
