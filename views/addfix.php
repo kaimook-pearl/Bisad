@@ -19,12 +19,11 @@
     else{
         $requir = 'อนุญาติ';
     }
-    $date = date("Y-m-d");
 
-    mysqli_query($conn, "INSERT INTO `repairdetails` values ('$order','','$work','$problem','$tel','$requir','$date','$room')") or die(mysqli_error($conn));
-    mysqli_query($conn, "INSERT INTO `repair` values ('$order','$problem','','รอดำเนินการ','$room')") or die(mysqli_error($conn));
+    mysqli_query($conn, "INSERT INTO `repairdetails` values ('$order','$work','$problem','$tel','$requir','$room')") or die(mysqli_error($conn));
+    mysqli_query($conn, "INSERT INTO `repair` values ('$order','$problem','รอดำเนินการ')") or die(mysqli_error($conn));
     echo "<script>
-         alert('Sucess');
+         alert('Success');
          window.location = '?page=fix';
     </script>";
 
