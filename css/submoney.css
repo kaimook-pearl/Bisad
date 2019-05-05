@@ -79,19 +79,37 @@ body{
 }
 
 .blogx{
+    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4%;
     text-align: left;
-    margin-left: 5%;
     font-size: 20px;
     padding: 3%;
-}
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
+    height: 600px
+    width: 70%;
 }
 
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
+.row {
+    margin: auto;
+    
+}
+
+.col-5 {
+    padding:  0px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+}
+
+
+
+input[type=text] {
+  width: 20%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid ;
+  border-radius: 20px;
 }
