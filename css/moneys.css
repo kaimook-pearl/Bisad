@@ -35,7 +35,7 @@ body{
 }
 
 .out{
-    margin-left: 725px;
+    margin-left: 525px;
 }
 
 .out a{
@@ -86,10 +86,12 @@ body{
 }
 
 table {
+    /* padding: 50px; */
     border: 1px solid #dddddd;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    background-color: white;
   }
 td, th {
     /* border: 1px solid #dddddd; */
@@ -97,10 +99,13 @@ td, th {
     padding: 8px;
   }
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #EEEEEE;
   }
 .test{
+      margin: 40px;
       margin-top: 100px;
+      
+      
   }
 
   .pagination {
