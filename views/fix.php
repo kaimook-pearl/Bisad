@@ -51,7 +51,7 @@
         <div>
             <div class="textinfo">
                 <div style="text-align:right;">
-                    <button class="w3-btn w3-round-xlarge">+ ADD</button>
+                    <button class="w3-btn w3-round-xlarge" onclick="location.href='?page=fixdetail'">+ ADD</button>
                     <hr>
 
 
@@ -70,7 +70,7 @@
           if ($query->num_rows > 0) {
           ?><table style="width:100%" border="1">
           <tr>
-            <th>คิวที่</th>
+            <th>ลำดับ</th>  
             <th>อาการ/ปัญหา</th>
             <th>สถานะ</th>
 
@@ -80,9 +80,11 @@
 
           <?php 
             // output data of each row
-              while($row = $query->fetch_assoc()) { 
+            $x = 0;
+              while($row = $query->fetch_assoc()) {
+                $x = $x+1; 
                 echo "<tr>
-                <td>". $row["repair_id"]. "</td>
+                <td>". $x. "</td>
                 <td>". $row["description"];?>
                 </td>
                 <td><?php
