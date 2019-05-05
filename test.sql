@@ -117,7 +117,7 @@ CREATE TABLE `repair` (
 -- Dumping data for table `repair`
 --
 
-INSERT INTO `repair` (`repair_id`, , `comments`, `state`) VALUES
+INSERT INTO `repair` (`repair_id`, `comments`, `state`) VALUES
 ('RE0001', NULL, 'รอดำเนินการ'),
 ('RE0002', NULL, 'สำเร็จ'),
 ('RE0003', NULL, 'รอดำเนินการ'),
