@@ -64,6 +64,7 @@
           case 'logout':
             require_once('views/logout.php');
             break;
+
           
           case 'ค่าจาก ?page=':
             # code...
@@ -87,6 +88,14 @@
             require_once('views/logout.php');
             break;
           
+          case 'announce':
+            require_once('views/announce.php');
+            break;
+
+          case 'payment':
+            require_once('views/paymentfromuser.php');
+            break;
+
           case 'ค่าจาก ?page=':
             # code...
             break;
