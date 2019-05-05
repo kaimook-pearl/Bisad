@@ -36,7 +36,6 @@
                 </div>
                 <div class = "col-5">
                     <h5>ใบเสร้จสลิปการโอน:</h5>
-                    <input type="text" id="pic" name="pic"> 
                     <input type="file" name="myFile">               
                 </div>
                 <div class="col-1"></div>
