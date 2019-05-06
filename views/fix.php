@@ -24,7 +24,7 @@
         .w3-btn {
             width: 150px;
             color: white;
-            background-color: blue;
+            background-color: #4CAF50;
         }
     </style>
 </head>
@@ -68,13 +68,15 @@
         ON (rd.repair_id = rp.repair_id)
         WHERE u.id = ".$_SESSION['id']);
           if ($query->num_rows > 0) {
-          ?><table style="width:100%" border="1">
+    ?>
+          <table style="width:100%">
           <tr>
             <th>ลำดับ</th>  
             <th>อาการ/ปัญหา</th>
             <th>สถานะ</th>
 
             </tr>
+          
 
             
 
@@ -96,6 +98,7 @@
                     $conn->close();
             ?>
             </tr>
+            </table>
 
 </div>
 

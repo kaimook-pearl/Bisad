@@ -46,7 +46,7 @@
                 <label for="lblbuild">อาคาร : </label>
                 <label for="lblbuild" name="building"><?php echo $building;?></label>
 
-                <label for="lblbuild">ห้อง : </label>
+                <label id="roomm" for="lblbuild">ห้อง : </label>
                 <label for="lblbuild" name="room"><?php echo $room;?></label><br><br>
 
                 <label for="lblbuild">เลือกงานซ่อม</label><br><br>
@@ -125,7 +125,7 @@
                     <br>
                     <br>
 
-                    <input type="submit" value="ส่งคำแจ้งซ่อม">
+                    <input id="submit" type="submit" value="ส่งคำแจ้งซ่อม">
                 </p>
             </form>
         </div>
