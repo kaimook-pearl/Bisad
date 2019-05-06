@@ -78,10 +78,7 @@
       </table>
 
   </div>
-  <div class="logo1" onclick="location.href='?page=submoney';">
-    <img src="image/logo.png" style="width:4em;">
-  </div>
-
+  
 
 
 </body>
