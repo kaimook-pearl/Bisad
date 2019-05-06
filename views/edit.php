@@ -84,40 +84,41 @@
             if ($row["state"] != "ชำระแล้ว") {               
             ?>
             <form action="" method="POST">
-                <select name = "select" id="select">
+                <!-- <select name = "select" id="select">
                 <option>ชำระแล้ว<option>
-                        <option>ชำระแล้ว</option>
+                        <option>ชำระแล้ว</option> -->
             </select>
-            <input value="submit" type="submit">
+            <input value="submit" type="submit"  name='submit'>
             </form>
             
             </td></tr>
 
             <?php 
-            if(isset($_POST['select'])){
-            $post = $_POST['select'];
-            
-            $sql = "UPDATE  bill   SET bill.state ='$post' WHERE id='$bid'";
+            }
+            if(isset($_POST['submit']))
+            // $post = $_POST['select'];
+            $bid = $row['id'];
+            $sql = "UPDATE  bill   SET state ='ชำระแล้ว' WHERE id='b0013'";
             if (mysqli_query($conn, $sql)) {
                 echo "Record updated successfully";
             } else {
                 echo "Error updating record: " . mysqli_error($conn);
             }
-            }
-        }
             
 
-            
+
+          
           }
         } else {
           echo "ไม่มีข้อมูล";
-          echo $bid;
-        }
 
+        }
+    
     }
         // $conn->close();
         ?>
                 </table>
+                
                 <!-- <form action="" method="POST">
                 <select name ="test" id="test">
                 <option><option>
@@ -126,7 +127,7 @@
             <input value="submit" type="submit">
             </form> -->
             
-            <?php            
+            <?php         
   
             
             ?>
