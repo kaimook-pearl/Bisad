@@ -35,16 +35,16 @@
                     <input type="text" id="bank" name="bank">  
                 </div>
                 <div class = "col-5">
-                    <h5>ใบเสร้จสลิปการโอน:</h5>
-                    <input type="file" name="myFile">               
+                    <h5>ไปยังธนาคาร:</h5>
+                    <input type="text" id="tobank" name="tobank">             
                 </div>
                 <div class="col-1"></div>
             </div>
             <div class="row">
                 <div class="col-1"></div>
                 <div class = "col-5">
-                    <h5>ไปยังธนาคาร:</h5>
-                    <input type="text" id="tobank" name="tobank">  
+                    <h5>ใบเสร้จสลิปการโอน:</h5>
+                    <input type="file" name="myFile">    
                 </div>
                 <div class = "col-5">
                     <h5>ยอดที่ต้องชำระ:</h5>
