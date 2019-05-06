@@ -70,19 +70,17 @@ body{
 .big-box {
     margin: auto;
     margin-top: 4%;
-    background: rgb(255, 255, 255);
+    background: rgba(242, 242, 243, 0.95);
     border-radius: 3vw;
     width: 70%; 
     height: 600px;
 }
 
-#topic {
-    margin-top: 20;
-}
-
-h4 {
+h3 {
     color: rgb(65, 65, 65);
     margin: 20px;
+    padding-top: 30px;
+    padding-left: 30px;
 }
 
 h5 {
@@ -102,9 +100,9 @@ h5 {
 
 input {
     border-radius: 10vw;
-    box-shadow: #ddd;
     width: 80%;
-    
+    border: none;
+    height: 35px; 
 }
 
 #save {

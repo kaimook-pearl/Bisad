@@ -27,8 +27,8 @@
     </div>
 </div>
 <div class = "big-box">
-    <div id = topic>
-        <h4>แก้ไขข้อมูลส่วนตัว</h4>
+    <div class = topic>
+        <h3>แก้ไขข้อมูลส่วนตัว</h3>
     </div>
     <div class="row">
         <div class="col-1"></div>
