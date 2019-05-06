@@ -33,23 +33,11 @@
     <div class="row">
         <div class="col-1"></div>
             <div class = "col-5">
-                <h5>Username:</h5>
-                <input type="text" id="username" name="username">  
-            </div>
-            <div class = "col-5">
-                <h5>Confirm New Password:</h5>
-                <input type="text" id="connewPass" name="connewPass">                
-            </div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-1"></div>
-            <div class = "col-5">
-                <h5>Old Password:</h5>
+            <h5>Old Password:</h5>
                 <input type="text" id="oldPassword" name="oldPassword">  
             </div>
             <div class = "col-5">
-                <h5>E - Mail:</h5>
+            <h5>E - Mail:</h5>
                 <input type="text" id="email" name="email">                
             </div>
         <div class="col-1"></div>
@@ -57,8 +45,19 @@
     <div class="row">
         <div class="col-1"></div>
             <div class = "col-5">
-                <h5>New Password:</h5>
+            <h5>New Password:</h5>
                 <input type="text" id="newPassword" name="newPassword">  
+            </div>
+            <div class = "col-5">
+                                
+            </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+            <div class = "col-5">
+            <h5>Confirm New Password:</h5>
+                <input type="text" id="connewPass" name="connewPass">
             </div>
             <div class = "col-5">
             <button type="button" id="save" name="save">Save</button>               
