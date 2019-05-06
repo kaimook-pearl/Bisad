@@ -28,8 +28,14 @@
 <div class="info">
     <div>
         <div class="textinfo">
-            
-            
+        <table style="width:100%">
+            <tr>
+            <th>ลำดับ</th>  
+            <th>อาการ/ปัญหา</th>
+            <th>สถานะ</th>
+
+            </tr>
+        </table>
         </div>
         
     </div>
