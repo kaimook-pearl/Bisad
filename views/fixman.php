@@ -27,14 +27,37 @@
 
 <div class="info">
     <div>
+    <?php
+    $conn = mysqli_connect("localhost", "root", "", "test") or die("ERROR");
+    mysqli_set_charset($conn, "utf8");
+
+    $query = mysqli_query($conn, "SELECT *
+        FROM repairdetails join  repair 
+        on (repairdetails.repair_id = repair.repair_id)"
+        );
+    if ($query->num_rows > 0) {?>
         <div class="textinfo">
-        <table style="width:100%">
+        <table style="width:100%;border=1" >
             <tr>
             <th>ลำดับ</th>  
             <th>อาการ/ปัญหา</th>
+            <th>อนุญาติให้เข้าห้อง</th>
+            <th>ห้อง</th>
             <th>สถานะ</th>
 
             </tr>
+            
+            <?php
+        // output data of each row
+        while ($row = $query->fetch_assoc()) {
+            echo "<tr><td>".$row['repair_id']."</td>";
+            echo "<td>".$row['description']."</td>";
+            echo "<td>".$row['allowstatus']."</td>";
+            echo "<td>".$row['room']."</td>";
+            echo "<td>".$row['state']."</td></tr>";
+            
+        }}?>
+        
         </table>
         </div>
         
