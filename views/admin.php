@@ -14,10 +14,9 @@
     <div class="index" onclick="location.href='?page=home';">
         <img src="image/logo1.jpg" style="width: 4em; height: 1.5em;"></a> 
     </div>
-    
     <div class="navbar">
       <a href="?page=edit">แก้ไข</a>
-      <a href="?page=announce">การชำระเงิน</a>
+      <a href="?page=announce">แจ้งรายละเอียดค่าเช่า</a>
       <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>
 
