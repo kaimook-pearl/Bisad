@@ -18,7 +18,7 @@
     </div>
 
     <div class="navbar">
-      <a href="?page=fix">แจ้งซ่อม</a>
+      <a href="?page=edit">แก้ไข</a>
       <a href="?page=announce">การชำระเงิน</a>
       <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>
@@ -41,19 +41,19 @@
     $order = "b".str_pad(intval($count2['count'])+1, 4, '0', STR_PAD_LEFT);
 
 ?><form action="" method="POST">
-  <div class="broom"><input type="text" name="broom" placeholder="เลือกห้อง" required>
+  <!-- <div class="broom"><input type="text" name="broom" placeholder="เลือกห้อง" required> -->
   <!-- <div class="bdate"><input type="date" name="bdate" placeholder="เลือกเดือน" value="
   <?php 
   // if(isset($_POST['bdate'])) echo $_POST['bdate']
   ?>"> -->
-  <input type="submit" value="enter">
+  <input type="submit" value="refresh" name="refresh">
   </div></form>
   <?php
-  if(isset($_POST['broom']) or isset($_POST['bdate']))
+  if(isset($_POST['refresh']))
         {
-          $room = $_POST['broom'];
-          $room1 = $room;
-          $days = $day;
+          $room = $_POST['refresh'];
+          // $room1 = $room;
+          // $days = $day;
         }
         ?>
         <form action="" method="POST">
@@ -71,12 +71,12 @@
         <?php 
         // if(isset($_POST['broom'])){  $room3 = $_POST['broom']; echo $room3;}
         ?>" disabled></td> -->
-        <td><div class="broom"><input type="text" name="broom" placeholder="เลือกห้อง"></td>
+        <td><div class="broom"><input type="text" name="broom" placeholder="เลือกห้อง" required></td>
 
-<td><div class="cost"><input type="text" name="cost" placeholder="ค่าเช่าเดือนนี้" ></td>
-<td><div class="bdate"><input type="date" name="bdate" placeholder="เลือกเดือน" value="<?php if(isset($_POST['bdate'])) echo $_POST['bdate']?>">
+<td><div class="cost"><input type="text" name="cost" placeholder="ค่าเช่าเดือนนี้" required></td>
+<td><div class="bdate"><input type="date" name="bdate" placeholder="เลือกเดือน" required value="<?php if(isset($_POST['bdate'])) echo $_POST['bdate']?>">
  </td>
-<td><input type="submit" value="Submit" name="submit"></td>
+<td><input type="submit" value="submit" name="submit"></td>
     </tr>    </form>
         
 <?php
@@ -85,7 +85,7 @@
         FROM bill
         ORDER BY day DESC, id DESC"
         );
-      
+      $day = isset($_POST['bdate']) ? $_POST['bdate']:"";
     if ($query->num_rows > 0) {
         // output data of each row
         while ($row = $query->fetch_assoc()) {
@@ -94,15 +94,7 @@
             echo "<td>".$row['cost']."</td>";
             echo "<td>".date('d/M/Y ', strtotime($row['day'])) ."</td>";
             echo "<td>".$row['state']."</td></tr>";
-            // break;
-        //     echo "</td><td><div class=\"billid\">
-        //     <input type=\"text\" name=\"billid\" placeholder=\"เลขที่บิล\" required></td>";
-        //     echo "<td><div class=\"cost\">
-        //     <input type=\"text\" name=\"cost\" placeholder=\"ค่าห้อง\" required></td>";
-        //     echo "<td><select name=\"statust\">
-        //     <option value=\"notdone\" name=\"notdone\">ยังไม่ชำระ</option>
-        //     <option value=\"done\" name=\"done\">ชำระแล้ว</option>
-        //   </select></td></tr>";
+
           }
         } else {
           echo "ไม่มีข้อมูล";
@@ -121,27 +113,27 @@
           if(isset($_POST["cost"])){
             // $bilid = $_POST["billid"];
             $cost = $_POST["cost"];
-            // $datee = $_POST["broo"];
+            $room1 = $_POST["broom"];
          
             // echo $order;
             // echo $room;
             // echo $cost;
-            // echo $days;
+            $day = date('Y-m-d',strtotime($day));
             if (!$conn) 
             {
               echo "not connect";
             }
-          }
-          if(isset($_POST["submit"])){
-        $sql = "INSERT INTO bill   Value ('$order','$room1',$cost,'ยังไม่ชำระ','$days')";
+          
+        $sql = "INSERT INTO bill   Value ('$order','$room1',$cost,'ยังไม่ชำระ','$day')";
         if (!mysqli_query($conn,$sql)) {
             echo "not insert";
         }
-        else {
-            echo("<script>alert('ส่งฟอร์ม สำเร็จ!!')</script>");
-            header('refresh:2; ?page=announce');
-        }
+        // else {
+        //     echo("<script>alert('ส่งฟอร์ม สำเร็จ!!')</script>");
+        //     header('refresh:2;?page=announce');
+        // }
       }
+        // header('refresh:0;?page=announce');
         // if(isset($_POST['broom']))
         // {
         //   $room = $_POST['broom'];
