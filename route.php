@@ -96,8 +96,8 @@
             require_once('views/paymentfromuser.php');
             break;
 
-          case 'ค่าจาก ?page=':
-            # code...
+          case 'edit':
+          require_once('views/edit.php');
             break;
           
         }
