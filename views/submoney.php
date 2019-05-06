@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-1"></div>
                 <div class = "col-5">
-                    <h5>ใบเสร้จสลิปการโอน:</h5>
+                    <h5>ใบเสร็จสลิปการโอน:</h5>
                     <input type="file" name="myFile">    
                 </div>
                 <div class = "col-5">
