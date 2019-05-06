@@ -18,7 +18,7 @@
 
     <div class="navbar">
       <a href="?page=edit">แก้ไข</a>
-      <a href="?page=announce">การชำระเงิน</a>
+      <a href="?page=announce">แจ้งรายละเอียดค่าเช่า</a>
       <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>
 
@@ -27,66 +27,146 @@
     </div>
 
   </div>
-  <div class="test"><form action="" method="POST">
+  <div class="test">ตรวจสอบหลักฐานการชำระเงิน<form action="" method="POST">
       <div class="bdate"><input type="month" name="bdate" placeholder="เลือกเดือน" value="
   <?php 
   if(isset($_POST['bdate'])){ echo $_POST['bdate'];}
   ?>">
-  <input type="submit" value="submit"></div>
+  <input type="submit" value="submit" name="submit"></div>
   </form>
 
     <?php
-    if(isset($_POST['bdate'])){
+    $dato = date('m-Y');
+    if(isset($_POST['submit'])){
       $dato = $_POST['bdate'];
-    }
     $conn = mysqli_connect("localhost", "root", "", "test") or die("ERROR");
     mysqli_set_charset($conn, "utf8");
-    $query = mysqli_query($conn, "SELECT *
-        FROM payment join bill on(payment.bill_id = bill.id)"
+    $query = mysqli_query($conn, "SELECT *,payment.day as dayss
+        FROM payment join bill on(payment.bill_id = bill.id)
+        WHERE payment.day like '%$dato%'"
         );
-    if ($query->num_rows > 0) {
-      ?><table>
-        <tr style="background-color:#74B4DE;color:white;">
-          <th>ห้อง</th>
-          <th>รายการ</th>
-        </tr>
-
-
-
-        <?php
+      if ($query->num_rows > 0) {
+        ?><table>
+          <tr style="background-color:#74B4DE;color:white;">
+          <th>เลขที่</th>
+            <th>ห้อง</th>
+              <th>ประจำเดือน</th>
+              <th>ราคา</th>
+              <th>จากธนาคาร</th>
+              <th>วันที่</th>
+              <th>เวลา</th>
+              <th>สลิป</th>
+              <th>สถานะ</th>
+          </tr>
+          <?php
         // output data of each row
         while ($row = $query->fetch_assoc()) {
               echo "<tr><td>".$row['bill_id']."</td>";
               echo "<td>". $row["room"] ."</td>";
-              echo "<td>". date('d-M-Y',strtotime($row["day"])) ."</td>";
+              echo "<td>". date('M-Y',strtotime($row["day"])) ."</td>";
               echo "<td>".$row['cost']."</td>";
               echo "<td>".$row['frombank']."</td>";
-              echo "<td>".$row['tobank']."</td>";
-              echo "<td>".$row['day']."</td>";
+              echo "<td>".date('d-M-Y',strtotime($row['dayss']))."</td>";
               echo "<td>".$row['when']."</td>";
               echo "<td>".$row['pictureurl']."</td>";
-              
-            
+              echo "<td>".$row['state']."</td>";
           }
         } else {
           echo "0 results";
         }
-        if(isset($_POST['done'])){
-          $done = $_POST['done'];
-          echo $done;
-        }
-        $conn->close();
+      }
+       $conn->close();
         ?>
         </tr>
       </table>
 
   </div>
-  <div class="logo1" onclick="location.href='?page=submoney';">
-    <img src="image/logo.png" style="width:4em;">
-  </div>
+<!-- kals;dkls;adk;lakdl;sk askd;laskl;daksldkaskfl;jdf kjwwifj akfklfljg  kaifkadi kkw fms;kfl ;wlfkkfld fakl;fka'sf'; -->
+  <form action="" method="POST">
+  <div class="bid">เปลี่ยนสถานะ<input type="text" name="bid" placeholder="Bill_id" required>
+  <!-- <div class="bdate"><input type="date" name="bdate" placeholder="เลือกเดือน" value="
+  <?php 
+  // if(isset($_POST['bdate'])) echo $_POST['bdate']
+  ?>"> -->
+  <input type="submit" value="enter">
+  </div></form>
+  <table>
+        <tr style="background-color:#74B4DE;color:white;">
+            <th>id</th>
+          <th>room</th>
+          <th>cost</th>
+          <th>date</th>
+          <th>status</th>
+        </tr>
+  <?php
+  if(isset($_POST['bid']) or isset($_POST['bid']))
+        {
+          $bid = $_POST['bid'];
+
+        ?>
+
+    
+<?php
+     $conn1 = mysqli_connect("localhost", "root", "", "test") or die("ERROR");
+     mysqli_set_charset($conn1, "utf8");
+    $query1 = mysqli_query($conn1, "SELECT * 
+        FROM bill
+        Where bill.id = '".$bid."'"
+        );
+      
+    if ($query1->num_rows > 0) {
+        // output data of each row
+        while ($row1 = $query1->fetch_assoc()) {
+                        $bid = $row1['id'];
+            echo "<tr><td>".$row1['id']."</td>";
+            echo "<td>".$row1["room"]."</td>";
+            echo "<td>".$row1['cost']."</td>";
+            echo "<td>".date('d/M/Y ', strtotime($row1['day'])) ."</td>";
+            echo "<td>".$row1['state']."</td></tr>";?>
+            <tr><td></td><td></td><td></td><td></td><td>
+            <?php
+            if ($row1["state"] != "ชำระแล้ว") {               
+            ?>
+            <form action="" method="POST">
+                <!-- <select name = "select" id="select">
+                <option>ชำระแล้ว<option>
+                        <option>ชำระแล้ว</option> -->
+            <!-- </select> -->
+            <input type="text" name="done" value="ชำระแล้ว">
+            <input value="submit" type="submit"  name='submit'>
+            </form>
+            
+            </td>
+
+            <?php 
+            
+            if(isset($_POST['submit']))
+              echo("<script>alert('ส่งฟอร์ม สำเร็จ!!')</script>");
+              $bid = $row1['id'];
+              $sql1 = "UPDATE  bill   SET state ='ชำระแล้ว' WHERE id='$bid'";
+              if (mysqli_query($conn1, $sql1)) {
+              
+                 echo "Record updated successfully";
+                
+              } else {
+                  echo "Error updating record: " . mysqli_error($conn);
+            }
+          }
+        
 
 
+          
+          }
+        } else {
+          echo "ไม่มีข้อมูล";
 
+        }
+        $conn1->close();
+    }
+    
+
+    ?>
+</div>
 </body>
 
 </html>
