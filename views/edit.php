@@ -19,7 +19,7 @@
 
     <div class="navbar">
       <a href="?page=edit">แก้ไข</a>
-      <a href="?page=announce">การชำระเงิน</a>
+      <a href="?page=announce">แจ้งรายละเอียดค่าเช่า</a>
       <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>
 
@@ -70,10 +70,12 @@
         FROM bill
         Where bill.id = '".$bid."'"
         );
-      
+        
     if ($query->num_rows > 0) {
         // output data of each row
+
         while ($row = $query->fetch_assoc()) {
+                        $bid = $row['id'];
             echo "<tr><td>".$row['id']."</td>";
             echo "<td>".$row["room"]."</td>";
             echo "<td>".$row['cost']."</td>";
@@ -87,24 +89,29 @@
                 <!-- <select name = "select" id="select">
                 <option>ชำระแล้ว<option>
                         <option>ชำระแล้ว</option> -->
-            </select>
+            <!-- </select> -->
+            <input type="text" name="done" value="ชำระแล้ว">
             <input value="submit" type="submit"  name='submit'>
             </form>
             
-            </td></tr>
+            </td>
 
             <?php 
-            }
-            if(isset($_POST['submit']))
-            // $post = $_POST['select'];
-            $bid = $row['id'];
-            $sql = "UPDATE  bill   SET state ='ชำระแล้ว' WHERE id='b0013'";
-            if (mysqli_query($conn, $sql)) {
-                echo "Record updated successfully";
-            } else {
-                echo "Error updating record: " . mysqli_error($conn);
-            }
             
+            if(isset($_POST['submit']))
+              echo("<script>alert('ส่งฟอร์ม สำเร็จ!!')</script>");
+              $bid = $row['id'];
+              $sql = "UPDATE  bill   SET state ='ชำระแล้ว' WHERE id='$bid'";
+              if (mysqli_query($conn, $sql)) {
+              
+                 echo "Record updated successfully";
+                  header('refresh:1; ?page=edit');
+                
+              } else {
+                  echo "Error updating record: " . mysqli_error($conn);
+            }
+          }
+        
 
 
           
