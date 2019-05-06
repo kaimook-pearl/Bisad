@@ -16,9 +16,9 @@
     </div>
     
     <div class="navbar">
-        <a href="?page=fix">แจ้งซ่อม</a>
-        <a href="?page=announce">การชำระเงิน</a>
-        <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
+      <a href="?page=edit">แก้ไข</a>
+      <a href="?page=announce">การชำระเงิน</a>
+      <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>
 
     <div class="out">
