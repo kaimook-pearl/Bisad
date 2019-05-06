@@ -39,6 +39,11 @@
             require_once('views/addfix.php');
           break;
 
+          case 'print':
+          require_once('views/print.php');
+          break;
+
+
           case 'ค่าจาก ?page=':
             # code...
             break;
