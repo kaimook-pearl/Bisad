@@ -45,6 +45,7 @@
             <th>อนุญาติให้เข้าห้อง</th>
             <th>ห้อง</th>
             <th>สถานะ</th>
+            <!-- <th>แจ้งสถานะ</th> -->
 
             </tr>
             <form action="" method="POST">
@@ -52,58 +53,61 @@
             $x = 1;
         // output data of each row
         while ($row = $query->fetch_assoc()) {
-            ?><tr><td><input type="hidden" name="hdnID<?=$x;?>" size="5" value="<?=$row["repair_id"];?>">
-            <input type="text" name="txtID<?php echo $x;?>" size="5" value="<?php echo $row["repair_id"];?>"></td>
+            ?><tr>
             <?php
             echo "<td>".$row['repair_id']."</td>";
             echo "<td>".$row['description']."</td>";
             echo "<td>".$row['allowstatus']."</td>";
             echo "<td>".$row['room']."</td>";
-            echo "<td>".$row['state'];
-            if ($row['state'] == 'สำเร็จ') {
-                echo "<input value=\"สำเร็จ\" disabled>";
-            }else{
-                echo "<select name=\"select\">
-                <option value=\"0\" name=\"done\">รอดำเนินการ</option>
-                <option value=\"1\" name=\"done\">สำเร็จ</option></select></td>";
+            echo "<td>".$row['state']."</td>";
+            // if ($row['state'] == 'สำเร็จ') {
+            //     echo "<td><input value=\"สำเร็จ\" disabled></td>";
+            // }else{
+            //     echo "<td><select name=\"select\">
+            //     <option value=\"0\" name=\"done\">รอดำเนินการ</option>
+            //     <option value=\"1\" name=\"done\">สำเร็จ</option></select></td>";
                 ?>
                 <?php
                 
             }
-            echo "<td><input type=\"text\" name=\"comment$x\" placeholder=\"comment$x\"></td></tr>";
-            $x = $x+1 ;
+            // echo "<td><input type=\"text\" name=\"comment$x\" placeholder=\"comment$x\"></td></tr>";
+            // $x = $x+1 ;
             
-        }}?>
-        
+        }?>
+        </tr>
         </table>
         </div>
         <input value="change" type="submit" name="submit"></form>
         
         <?php
             $rowcount = mysqli_num_rows($query);
+            $count = mysqli_query($conn, "SELECT COUNT(*) as count FROM payment") or die(mysqli_error($conn));
+    $count2 = $count->fetch_assoc();
+    $order = "RE".str_pad(intval($count2['count'])+1, 4, '0', STR_PAD_LEFT);
             
             printf("Result set has %d rows.\n<br>",$rowcount);
             if (isset($_POST['submit'])) {
             
                 
             // mysqli_free_result($query);
-                 for ($i=1; $i < (int)$rowcount; $i++) { 
-                     if(isset($_POST['comment'.$i])){
-                        $comment = $_POST['comment'.$i];
-                        $rid = $_POST['hdnID'.$i];
-                        echo $i."<br>";
-                        echo $row['repair_id'];
-                        echo $comment;}
-                        $sql1 = "UPDATE  repairdetails   SET comments = '$comment' WHERE repair_id ='$rid'";
-                        if (mysqli_query($conn, $sql1)) {
+            //      for ($i=1; $i < (int)$rowcount; $i++) { 
+            //          if(isset($_POST['comment'.$i])){
+            //             $comment = $_POST['comment'.$i];
+            //             $rid = $_POST['hdnID'.$i];
+            //             echo $i."<br>";
+            //             echo $row['repair_id'];
+            //             echo $comment;}
+            //             $sql1 = "UPDATE  repairdetails   SET state = '$comment' WHERE repair_id = 'RE0001'";
+            //             if (mysqli_query($conn, $sql1)) {
                         
-                           echo "Record updated successfully";
+            //                echo "Record updated successfully";
                           
-                        } else {
-                            echo "Error updating record: " . mysqli_error($conn);
-                      }
+            //             } else {
+            //                 echo "Error updating record: " . mysqli_error($conn);
+            //           }
                         
-                    }
+            //         }
+            // }
             }
             ?>
        
