@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" media="screen" href="css/moneys.css" />
-  <title>แจ้งชำระเงิน</title>
+  <title>แจ้งสถานะ</title>
   <!-- <style>html,body {overflow-x: hidden;}</style>
   <style>html,body{overflow-y: hidden;}</style> -->
 </head>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="navbar">
-      <a href="?page=edit">แก้ไข</a>
+      <a href="?page=edit">แจ้งสถานะ</a>
       <a href="?page=announce">แจ้งรายละเอียดค่าเช่า</a>
       <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>
@@ -40,14 +40,15 @@
     $count2 = $count->fetch_assoc();
     $order = "b".str_pad(intval($count2['count'])+1, 4, '0', STR_PAD_LEFT);
 
-?><form action="" method="POST">
-  <div class="bid"><input type="text" name="bid" placeholder="Bill_id" required>
+?>
+<!-- <form action="" method="POST"> -->
+  <!-- <div class="bid"><input type="text" name="bid" placeholder="Bill_id" required> -->
   <!-- <div class="bdate"><input type="date" name="bdate" placeholder="เลือกเดือน" value="
   <?php 
   // if(isset($_POST['bdate'])) echo $_POST['bdate']
   ?>"> -->
-  <input type="submit" value="enter">
-  </div></form>
+  <!-- <input type="submit" value="enter"> -->
+  <!-- </div></form> -->
   <table>
         <tr style="background-color:#74B4DE;color:white;">
             <th>id</th>
@@ -57,9 +58,9 @@
           <th>status</th>
         </tr>
   <?php
-  if(isset($_POST['bid']) or isset($_POST['bid']))
-        {
-          $bid = $_POST['bid'];
+  // if(isset($_POST['bid']) or isset($_POST['bid']))
+  //       {
+  //         $bid = $_POST['bid'];
 
         ?>
 
@@ -68,7 +69,8 @@
      
     $query = mysqli_query($conn, "SELECT * 
         FROM bill
-        Where bill.id = '".$bid."'"
+        -- Where bill.id = '"
+        // .$bid."'"
         );
         
     if ($query->num_rows > 0) {
@@ -80,51 +82,59 @@
             echo "<td>".$row["room"]."</td>";
             echo "<td>".$row['cost']."</td>";
             echo "<td>".date('d/M/Y ', strtotime($row['day'])) ."</td>";
-            echo "<td>".$row['state']."</td></tr>";?>
-            <tr><td></td><td></td><td></td><td></td><td>
+            echo "<td>".$row['state']."</td>";?>
             <?php
-            if ($row["state"] != "ชำระแล้ว") {               
-            ?>
+            // if ($row["state"] != "ชำระแล้ว") {               
+            ?><td>
             <form action="" method="POST">
-                <!-- <select name = "select" id="select">
-                <option>ชำระแล้ว<option>
-                        <option>ชำระแล้ว</option> -->
-            <!-- </select> -->
-            <input type="text" name="done" value="ชำระแล้ว">
-            <input value="submit" type="submit"  name='submit'>
-            </form>
-            
+                <select name = "select" id="select">
+                <option>ยังไม่ชำระ<option>
+                        <option>ชำระแล้ว</option> 
+             </select>
             </td>
-
+            </tr>            
+           
             <?php 
             
-            if(isset($_POST['submit']))
+
+      }}
+      ?></table>
+      <input value="เปลี่ยนข้อมูล" type="submit"  name='submit'>
+            </form>
+            <?php
+                 if(isset($_POST['submit'])){
               echo("<script>alert('ส่งฟอร์ม สำเร็จ!!')</script>");
-              $bid = $row['id'];
-              $sql = "UPDATE  bill   SET state ='ชำระแล้ว' WHERE id='$bid'";
-              if (mysqli_query($conn, $sql)) {
+              // header('?page=edit');
+                 }
+      
+      $conn->close(); 
+        //     if(isset($_POST['submit']))
+        //       echo("<script>alert('ส่งฟอร์ม สำเร็จ!!')</script>");
+        //       $bid = $row['id'];
+        //       $sql = "UPDATE  bill   SET state ='ชำระแล้ว' WHERE id='$bid'";
+        //       if (mysqli_query($conn, $sql)) {
               
-                 echo "Record updated successfully";
-                  header('refresh:1; ?page=edit');
+        //          echo "Record updated successfully";
+        //           header('refresh:1; ?page=edit');
                 
-              } else {
-                  echo "Error updating record: " . mysqli_error($conn);
-            }
-          }
+        //       } else {
+        //           echo "Error updating record: " . mysqli_error($conn);
+        //     }
+        //   }
         
 
 
           
-          }
-        } else {
-          echo "ไม่มีข้อมูล";
+        //   }
+        // } else {
+        //   echo "ไม่มีข้อมูล";
 
-        }
-    
-    }
+        // }
+      
+
         // $conn->close();
         ?>
-                </table>
+               
                 
                 <!-- <form action="" method="POST">
                 <select name ="test" id="test">
@@ -142,8 +152,7 @@
   </div>
 </body>
 
-</html>
- <?php
+</html><?php
     //       if(isset($_POST["cost"])){
     //         // $bilid = $_POST["billid"];
     //         $cost = $_POST["cost"];
@@ -173,6 +182,5 @@
         //   $room = $_POST['broom'];
         // }
       
-        $conn->close();
-            ?>
+      
             

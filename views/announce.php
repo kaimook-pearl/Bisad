@@ -18,7 +18,7 @@
     </div>
 
     <div class="navbar">
-      <a href="?page=edit">แก้ไข</a>
+      <a href="?page=edit">แจ้งสถานะ</a>
       <a href="?page=announce">แจ้งรายละเอียดค่าเช่า</a>
       <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>

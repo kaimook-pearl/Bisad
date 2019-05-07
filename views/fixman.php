@@ -55,21 +55,23 @@
         while ($row = $query->fetch_assoc()) {
             ?><tr>
             <?php
+            $id = $row['repair_id'];
             echo "<td>".$row['repair_id']."</td>";
             echo "<td>".$row['description']."</td>";
             echo "<td>".$row['allowstatus']."</td>";
             echo "<td>".$row['room']."</td>";
             echo "<td>".$row['state']."</td>";
-            // if ($row['state'] == 'สำเร็จ') {
-            //     echo "<td><input value=\"สำเร็จ\" disabled></td>";
-            // }else{
-            //     echo "<td><select name=\"select\">
-            //     <option value=\"0\" name=\"done\">รอดำเนินการ</option>
-            //     <option value=\"1\" name=\"done\">สำเร็จ</option></select></td>";
+            if ($row['state'] == 'สำเร็จ') {
+                echo "<td><input value=\"สำเร็จ\" disabled></td>";
+            }else{
+                echo "<td><select name=\"select$id\">
+                <option value=\"รอดำเนินการ\">รอดำเนินการ</option>
+                <option value=\"สำเร็จ\">สำเร็จ</option></select></td>";
                 ?>
                 <?php
                 
             }
+        }
             // echo "<td><input type=\"text\" name=\"comment$x\" placeholder=\"comment$x\"></td></tr>";
             // $x = $x+1 ;
             
@@ -77,7 +79,8 @@
         </tr>
         </table>
         </div>
-        <input value="change" type="submit" name="submit"></form>
+        <input value="change" type="submit" name="submit">
+    </form>
         
         <?php
             $rowcount = mysqli_num_rows($query);
@@ -86,7 +89,15 @@
     $order = "RE".str_pad(intval($count2['count'])+1, 4, '0', STR_PAD_LEFT);
             
             printf("Result set has %d rows.\n<br>",$rowcount);
+
             if (isset($_POST['submit'])) {
+                while ($row = $query->fetch_assoc()) {
+                    $id = $row['repair_id'];
+                    $idx = 'select'.$id;
+                    $state = $_POST[$idx];
+                    mysqli_query($conn, "UPDATE `repair` SET `state` = '$state' WHERE 'repair_id' = '$id'") or die(mysqli_error($conn));
+                }
+                
             
                 
             // mysqli_free_result($query);

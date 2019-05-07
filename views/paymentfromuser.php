@@ -17,7 +17,7 @@
     </div>
 
     <div class="navbar">
-      <a href="?page=edit">แก้ไข</a>
+      <a href="?page=edit">แจ้งสถานะ</a>
       <a href="?page=announce">แจ้งรายละเอียดค่าเช่า</a>
       <a href="?page=payment">ตรวจสอบหลักฐานการชำระเงิน</a>
     </div>
@@ -27,7 +27,7 @@
     </div>
 
   </div>
-  <div class="test">ตรวจสอบหลักฐานการชำระเงิน<form action="" method="POST">
+  <div class="test"><h1 style="background-color:white;">ตรวจสอบหลักฐานการชำระเงิน</h1><form action="" method="POST">
       <div class="bdate"><input type="month" name="bdate" placeholder="เลือกเดือน" value="
   <?php 
   if(isset($_POST['bdate'])){ echo $_POST['bdate'];}
@@ -82,22 +82,23 @@
 
   </div>
 <!-- kals;dkls;adk;lakdl;sk askd;laskl;daksldkaskfl;jdf kjwwifj akfklfljg  kaifkadi kkw fms;kfl ;wlfkkfld fakl;fka'sf'; -->
-  <form action="" method="POST">
-  <div class="bid">เปลี่ยนสถานะ<input type="text" name="bid" placeholder="Bill_id" required>
+ 
   <!-- <div class="bdate"><input type="date" name="bdate" placeholder="เลือกเดือน" value="
   <?php 
   // if(isset($_POST['bdate'])) echo $_POST['bdate']
   ?>"> -->
-  <input type="submit" value="enter">
-  </div></form>
-  <table>
+   <!-- <form action="" method="POST">
+  <div class="bid">เปลี่ยนสถานะ<input type="text" name="bid" placeholder="Bill_id" required> -->
+  <!-- <input type="submit" value="enter">
+  </div></form>  สำคัญมั้ง-->
+  <!-- <table>
         <tr style="background-color:#74B4DE;color:white;">
             <th>id</th>
           <th>room</th>
           <th>cost</th>
           <th>date</th>
           <th>status</th>
-        </tr>
+        </tr> -->
   <?php
   if(isset($_POST['bid']) or isset($_POST['bid']))
         {
