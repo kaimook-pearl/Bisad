@@ -75,35 +75,50 @@
         
     if ($query->num_rows > 0) {
         // output data of each row
-
+        $i = 1;
         while ($row = $query->fetch_assoc()) {
-                        $bid = $row['id'];
+                  ${"bid$i"} = $row['id'];
             echo "<tr><td>".$row['id']."</td>";
             echo "<td>".$row["room"]."</td>";
             echo "<td>".$row['cost']."</td>";
             echo "<td>".date('d/M/Y ', strtotime($row['day'])) ."</td>";
             echo "<td>".$row['state']."</td>";?>
             <?php
-            // if ($row["state"] != "ชำระแล้ว") {               
+            if ($row["state"] != "ชำระแล้ว") {               
             ?><td>
             <form action="" method="POST">
-                <select name = "select" id="select">
-                <option>ยังไม่ชำระ<option>
-                        <option>ชำระแล้ว</option> 
+            <?php echo "<select name =\"select$i\" id=\"select$i\">"?>
+                <option value="ยังไม่ชำระ">ยังไม่ชำระ<option>
+                        <option value="ชำระแล้ว">ชำระแล้ว</option> 
              </select>
             </td>
-            </tr>            
+            </tr>
            
-            <?php 
-            
+            <?php }
+               else{
+              ?>
+              <td>
+            <form action="" method="POST">
+              <?php echo "
+                <select name =\"select$i\" id=\"select$i\" disabled>"?>
+                <option value="ชำระแล้ว">ชำระแล้ว</option> 
+                <option value="ยังไม่ชำระ">ยังไม่ชำระ<option>
+             </select>
+            </td>
+            </tr>
+            <?php
 
+              }
+            
+            $i = $i+1;
       }}
       ?></table>
-      <input value="เปลี่ยนข้อมูล" type="submit"  name='submit'>
+      <input value="เปลี่ยนข้อมูล" type="submit"  name='submit'><input value="refresh" type="submit"  name='refresh'>
             </form>
             <?php
                  if(isset($_POST['submit'])){
-              echo("<script>alert('ส่งฟอร์ม สำเร็จ!!')</script>");
+              echo $i-1;
+                $x = $i-1;
               // header('?page=edit');
                  }
       
