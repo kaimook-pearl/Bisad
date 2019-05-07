@@ -117,10 +117,43 @@
             </form>
             <?php
                  if(isset($_POST['submit'])){
-              echo $i-1;
                 $x = $i-1;
-              // header('?page=edit');
-                 }
+                  $cnt = 1;
+                       for ($i=1; $i <= (int)$rowcount; $i++) { 
+                           if(isset($_POST['comment'.$i])){
+                              $comment = $_POST['comment'.$i];
+                              $bid = ${"bid$i"};
+                              $select = $_POST['select'.$i];
+                              // echo $rid;
+                              // echo $comment;
+                              // echo $select."<br>";
+                           }
+                        //       $sql1 = "UPDATE  repair  SET repair.state = '$select', repair.comments = '$comment' 
+                        //       WHERE repair.repair_id = '$rid'";
+                              
+                        //       if (mysqli_query($conn, $sql1)) {
+                        //           $cnt = $cnt+1;
+                        //       }
+                        //       else {
+                                      
+                        //           echo "Error updating record: " . mysqli_error($conn);
+                             
+                        //         }
+                              
+      
+                              
+                         }
+                      
+                      
+                        //   if ($cnt == $i) {
+                        //       echo  "Record updated successfully";
+                        //   }
+                        //   else {
+                                  
+                        //       echo "Error updating record: " . mysqli_error($conn);
+                        // }
+                      }
+                    
       
       $conn->close(); 
         //     if(isset($_POST['submit']))
